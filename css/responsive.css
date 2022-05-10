@@ -1,0 +1,154 @@
+  /* Extra small Device. */
+  @media (max-width: 767px) {
+    .mobile{
+        display: block;
+    }
+    .desktop-hide{
+        display: block;
+    }
+    .desktop{
+        display: none;
+    }
+     .dashboard{
+        display: block;
+    }
+    .mb-btn-hide{
+        display: block;
+    }
+    .desk-btn{
+        display: none;
+    }
+    .w-75{
+        width: 100% !important;
+    }
+
+    .w-25 {
+        width: 100% !important;
+    }
+    .home-menu {
+        display: none;
+    }
+    header {
+        background: none;
+    }
+    .timer-item {
+        display: block;
+        margin: 19px 65px;
+        clip-path: none;
+        border-radius: 10px;
+        padding: 0;
+        padding-top: 45px;
+        box-shadow: 8px 10px 20px #8D25D4 !important;
+    }
+    .timer-item span {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
+        background: #fff;
+        border-radius: 10px;
+        padding: 5px;
+        letter-spacing: 4px;
+        border: 2px solid blue;
+    }
+  
+    .footer-img{
+        display: none;
+    }
+    .dash-menu {
+        padding-bottom: 30px;
+    }
+    .main-menu ul li a {
+        font-size: 20px;
+    }
+    .spanclass {
+        font-size: 20px !important;
+    }
+    .img-sp {
+        margin-bottom: 60px !important;
+    }
+     
+ }
+ /* MD Device :768px. */
+ @media (min-width: 768px) and (max-width: 991px) {
+    .desktop-hide{
+        display: none;
+    }
+    .mobile{
+        display: none;
+    }
+  
+    .desktop{
+        display: block;
+    }
+    .mb-btn-hide{
+        display: none;
+    }
+    .desk-btn{
+        display: block;
+    }
+    .logo-details span {
+        font-size: 25px;
+    }
+    .logo-details img {
+        width: 160px;
+    }
+    .wallet-btn {
+        width: 198px;
+    }
+    .counting-wrapper.text-center.mb-30 {
+        padding: 0 10px;
+        height: 230px;
+    }
+    .left-form img {
+        margin-bottom: 44px;
+        padding-top: 25px;
+    }
+
+ }
+ /* LG Device :992px. */
+ @media (min-width: 992px) and (max-width: 1200px) {
+    .desktop-hide{
+        display: none;
+    }
+    .mobile{
+        display: none;
+    }
+    .desktop{
+        display: block;
+    }
+    .desk-btn{
+        display: block;
+    }
+    .mb-btn-hide{
+        display: none;
+    }
+   
+
+ }
+ /* XL Device :1200px. */
+ @media (min-width: 1200px) and (max-width: 1920px) {
+    .desktop-hide{
+        display: none;
+    }
+     .mobile{
+         display: none;
+     }
+     .desktop{
+         display: block;
+     }
+     .desk-btn{
+        display: block;
+    }
+      .mb-btn-hide{
+        display: none;
+    }
+   
+ }
+
+
+
+
+
+
+

@@ -1,0 +1,377 @@
+/*google-fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,800;0,900;1,600&family=Rubik:ital,wght@0,400;0,600;0,700;0,800;1,300&display=swap');
+
+
+
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    background: #F3F3FF;
+}
+
+.dash-body {
+    width: 100%;
+}
+
+#downloadButton {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#clearButton {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #fff;
+}
+a:hover {
+    text-decoration: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+button:focus {
+    outline: 0;
+    outline: 0;
+}
+.black-bg {
+    background-color: #343434;
+}
+
+.pt-100 {
+    padding-top: 100px;
+}
+
+.pt-60 {
+    padding-top: 60px;
+}
+
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+.pb-70 {
+    padding-bottom: 70px;
+}
+
+.pt-70 {
+    padding-top: 70px;
+}
+
+.pb-60 {
+    padding-bottom: 60px;
+}
+
+.pb-50 {
+    padding-bottom: 50px;
+}
+
+.pb-40 {
+    padding-bottom: 40px;
+}
+
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.pt-90 {
+    padding-top: 90px;
+}
+
+.pb-90 {
+    padding-bottom: 90px;
+}
+
+/*header-area start*/
+.w-25{
+    width: 35% !important;
+}
+.dash-menu{
+    background-image: linear-gradient(to top, #472DB6 , #941CD4);
+}
+.header-area {
+    padding: 0 40px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+
+.logo-details {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.logo-details img{
+    width: 200px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.footer-img {
+	text-align: center;
+	padding-bottom: 30px;
+}
+.footer-img img{
+    width: 200px;
+}
+.logo-details span {
+	color: #FFFFFF;
+	font-family: "Poppins", Sans-serif;
+	font-size: 40px;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-style: normal;
+	line-height: 38px;
+	letter-spacing: 3.4px;
+}
+.kitty-btn {
+	font-family: "Poppins", Sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: uppercase;
+	background-color: #991BD6;
+	border-style: solid;
+	border-width: 2px 2px 2px 2px;
+    color: #fff;
+	border-color: #FFFFFF;
+	border-radius: 50px 50px 50px 50px;
+	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.28);
+	padding: 10px;
+	margin-top: 22px;
+}
+.wallet-btn {
+	font-family: "Poppins", Sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: uppercase;
+	background-color: #991BD6;
+	border-style: solid;
+	border-width: 2px 2px 2px 2px;
+	color: #fff;
+	border-color: #FFFFFF;
+	border-radius: 50px 50px 50px 50px;
+	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.28);
+	padding: 10px 20px;
+	margin-top: 22px;
+}
+.wallet-btn > a {
+    padding: 20px;
+    color: #fff;
+    padding-left: 5px;
+    padding-right: 0;
+    font-weight: 500;
+}
+.kitty-btn > a {
+    padding: 20px;
+    color: #fff;
+    padding-left: 5px;
+    padding-right: 0;
+    font-weight: 500;
+}
+.menu-list {
+    position: relative;
+    background: #7822C9;
+    padding: 20px;
+    margin: 10px;
+    width: 90%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 8px 12px 11px #893DCB !important;
+}
+.main-menu ul li i{
+    position: absolute;
+}
+
+.menu-list a {
+    font-size: 24px;
+    color: #fff;
+   
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*header-area  end*/
+
+/* dash  */
+.dashboard{
+    display: flex;
+    justify-content: space-between;
+    
+}
+/* home-menu  */
+header{
+    background: #991BD6;
+    height: 85px;
+    padding: 0 10px;
+}
+.home-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.home-menu h1 {
+	color: #FFFFFF2B;
+	font-family: "Poppins", Sans-serif;
+	font-size: 34px;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-style: normal;
+	line-height: 38px;
+	letter-spacing: 10px;
+	padding: 0 40px;
+}
+.fa-circle{
+font-size: 8px;
+margin-right: 5px;
+}
+.modal-body a {
+	color: #000 !important;
+	text-decoration: none;
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+}
+.md-title{
+    color: #941CD4;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.modal-header {
+	border-bottom: none !important;
+}
+.scr-bar{
+    height: 400px !important;
+    width: 800px !important; 
+    overflow: auto;
+    margin-top: 30px;
+     border: 1px solid #ddd;
+}
+.counting-wrapper .svg-inline--fa.fa-pencil-alt.fa-w-16 {
+    color: #fff;
+}
+
+span.counter {
+    font-size: 60px;
+    line-height: 77px;
+    font-weight: 500;
+    color: #991BD6;
+    margin-bottom: 10px;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+}
+
+.counting-wrapper p {
+    color: #492DB7;
+    font-size: 20px;
+font-weight: 500;
+line-height: 24px;
+}
+.counting-wrapper {
+	background: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 8px 10px 20px #F3E4FF;
+}
+
+/* Coming soon area css start */
+
+.coming-soon-area  {
+	background-image: linear-gradient(to left, #472DB6 , #941CD4);
+	padding: 20px 0;
+	margin: 0 20px;
+	border-radius: 10px;
+    width: 87%;
+    margin: auto;
+}
+.container{
+    margin: auto;
+    text-align: center;
+}
+.purple-bg {
+	color: #991BD6;
+}
+.tool-btn{
+	background: #fff !important;
+	border: none !important;
+}
+.tool-btn-gold{
+
+	border: none !important;
+	background: #FBF06F;
+}
+.jac{
+   
+    background: #FBF06F;
+}
+.count-title h2{
+    color: #FFFFFF;
+	font-size: 34px;
+	font-weight: 500;
+	text-transform: capitalize;
+	font-style: normal;
+	line-height: 38px;
+    padding-top: 19px;
+    align-items: center;
+}
+.timer-item{
+    display: inline-block;
+	background-image: linear-gradient(to bottom, #472DB6 , #941CD4);
+    margin: 5px 3px;
+    padding: 20px;
+    min-width: 120px;
+    font-size: 50px;
+    font-weight: 700;
+    clip-path: circle();
+    box-shadow: 8px 12px 11px #9022D5 !important;
+   
+}
+.timer-item span{
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+/* Coming soon area css end */
+ /* *********************************************
+                    Add form css here
+   *********************************************  */
+
+#submissions {
+    width: calc(100% - 10px);
+    padding: 5px;
+}
+
+#error {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: red;
+    font-weight: bold;
+    display: none;
+}

@@ -1,0 +1,1377 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Kittycoin</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <script src="https://kit.fontawesome.com/1715d9e317.js" crossorigin="anonymous"></script>
+
+<link rel="shortcut icon" href="img/kitycircletransparent.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="shortcut icon" href="img/Stroke.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <!-- Ticket Form Style -->
+  <style>
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body,
+    .ticket-form div,
+    .ticket-form form,
+    .ticket-form input,
+    .ticket-form select,
+    .ticket-form textarea,
+    .ticket-form label {
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+    }
+
+    .ticket-form h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 60px;
+      color: #fff;
+      z-index: 2;
+      line-height: 83px;
+      top: 30px;
+    }
+
+    .ticket-form legend {
+      padding: 10px;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 18px;
+      color: #fff;
+      background-color: #ce00ce;
+    }
+
+    .ticket-form textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+    }
+
+    .ticket-form .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+    }
+
+    .ticket-form form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 8px #CC8899;
+    }
+
+    .ticket-form input,
+    .ticket-form select,
+    .ticket-form textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .ticket-form input {
+      width: calc(100% - 10px);
+      padding: 5px;
+    }
+
+    .ticket-form input[type="date"] {
+      padding: 4px 5px;
+    }
+
+    .ticket-form textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+    }
+
+    .ticket-form .item:hover p,
+    .ticket-form .item:hover i,
+    .ticket-form .question:hover p,
+    .ticket-form .question label:hover,
+    .ticket-form input:hover::placeholder {
+      color: #006622;
+    }
+
+    .ticket-form .item input:hover,
+    .ticket-form .item select:hover,
+    .ticket-form .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 3px 0 #006622;
+      color: #006622;
+    }
+
+    .ticket-form .item {
+      position: relative;
+      margin: 10px 0;
+    }
+
+    .ticket-form .item span {
+      color: red;
+    }
+
+    .ticket-form .week {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .ticket-form .colums {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .ticket-form .colums div {
+      width: 48%;
+    }
+
+    .ticket-form input[type=radio],
+    .ticket-form input[type=checkbox] {
+      display: none;
+    }
+
+    .ticket-form label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+    }
+
+    .ticket-form .question span {
+      margin-left: 30px;
+    }
+
+    .ticket-form .question-answer label {
+      display: block;
+    }
+
+    .ticket-form label.radio:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+    }
+
+    .ticket-form input[type=radio]:checked+label:before,
+    .ticket-form label.radio:hover:before {
+      border: 2px solid #ff59ff;
+    }
+
+    .ticket-form label.radio:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid #ff59ff;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+    }
+
+    .ticket-form input[type=radio]:checked+label:after {
+      opacity: 1;
+    }
+
+    .ticket-form .flax {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .ticket-form .btn-block {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .ticket-form button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #ce00ce;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .ticket-form button:hover {
+      background: #ff59ff;
+    }
+
+    legend {
+      display: block;
+      width: auto;
+      padding: 0 5px;
+      margin-bottom: 0;
+      font-size: inherit;
+      line-height: inherit;
+      border: auto;
+      border-bottom: none;
+      margin-right: auto;
+      margin-left: 10px;
+    }
+
+    fieldset {
+      border: 2px groove threedface;
+      padding: 5px;
+    }
+
+    .spanclass {
+      font-size: 24px;
+      color: #fff;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+    }
+
+    @media (min-width: 568px) {
+
+      .ticket-form .name-item,
+      .ticket-form .city-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .ticket-form .name-item input,
+      .ticket-form .name-item div {
+        width: calc(50% - 20px);
+      }
+
+      .ticket-form .name-item div input {
+        width: 97%;
+      }
+
+      .ticket-form .name-item div label {
+        display: block;
+        padding-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dashboard">
+    <div class="dash-menu w-25">
+      <div class="main-menu">
+        <div class="logo-details">
+          <img src="img/Stroke.png" alt="">
+          <span>KittyCoin</span>
+          <div class="wallet-btn desktop-hide" id='loginButton' onclick="connect()">
+            <i class="fas fa-wallet"></i>
+            <a href="#">Wallet</a>
+          </div>
+          <div class="kitty-btn">
+            <i class="fas fa-wallet"></i>
+            <a href="#">Buy Kitty</a>
+          </div>
+       
+        </div>
+
+        <ul class="nav-links">
+          <li class="menu-list">
+            <a href="#">
+              <i class="fas fa-th-large"></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+          </li>
+          <li class="menu-list">
+            <a href="#buy-ticket">
+              <i class="fas fa-ticket-alt"></i>
+              <span class="links_name">Purchase Tickets</span>
+            </a>
+          </li>
+          <li class="menu-list mb-btn-hide">
+            <a href="#Total-Lottery-mb">
+              <i class="fas fa-ticket-alt"></i>
+              <span class="links_name">Available Tickets</span>
+            </a>
+          </li>
+          <li class="menu-list desk-btn">
+            <a href="#Total-Lottery">
+              <i class="fas fa-ticket-alt"></i>
+              <span class="links_name">Available Tickets</span>
+            </a>
+          </li>
+          <li class="menu-list">
+            <a href="#countdown">
+              <i class="fas fa-clock"></i>
+              <span class="links_name">Drawing Countdown</span>
+            </a>
+          </li>
+          <li class="menu-list">
+            <a href="#bnb-jacpot">
+              <i class="fas fa-grin-stars"></i>
+              <span class="links_name">BNB Jackpot</span>
+            </a>
+          </li>
+          <li class="menu-list" data-toggle="modal" data-target="#exampleModalCenter">
+            <span class="spanclass">
+              <i class="fas fa-info-circle"></i>
+              <span class="links_name">Lottery Info</span>
+            </span>
+          </li>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div  class="modal-dialog modal-dialog-centered" role="document">
+              <div  class="modal-content scr-bar">
+                <div class="modal-header">
+                  <h5 class="modal-title md-title" id="exampleModalLongTitle">Lottery Details</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                
+                 <ul>
+                   <li><i class="fas fa-circle"></i><a href="">YxK will provide an initial 5 BNB to our very first $KITY Jackpot!</a></li>
+                   <li><i class="fas fa-circle"></i><a href="">Entrants purchase Lottery Tickets and choose 4 numbers between 1-20, just like a real lottery! Entrants can use the Quick Pick button for random numbers to be chosen!</a></li>
+                   <li><a href="">Weekly Number Drawings will be held LIVE ON VC for full transparency</a>
+
+                    <li><i class="fas fa-circle"></i><a href="">Prizes must be claimed within 24 hours</a></li>
+                   <li><i class="fas fa-circle"></i><a href="">If there is no winner, or the prize is not claimed within 24 hours, the Jackpot amount will roll over to the next jackpot</a></li>
+                  </li>
+                   
+                   <li><i class="fas fa-circle"></i><a href="">Entrants will not be required to be holding $KITY tokens to purchase lottery tickets</a></li>
+                   <li><i class="fas fa-circle"></i><a href="">If the entrant is not holding a minimum of 50,000 $KITY tokens at the time of the lottery ticket purchase, they can only claim 50% of the jackpot if they win the lottery</a></li>
+                   <li><i class="fas fa-circle"></i><a href="">Entrants holding the Bonus Ticket Requirements of $KITY at the time of their lottery ticket purchases will receive a bonus lottery ticket per x amount of tickets bought
+                    (Bonus Ticket Requirements listed below)</a>
+                    <li><i class="fas fa-circle"></i><a href="">For every 100,000 $KITY that a lottery ticket purchaser holds, they will be granted 1 bonus lottery ticket for up to 5 bonus lottery tickets</a></li>
+                   <li><i class="fas fa-circle"></i><a href="">Each Bonus Lottery Ticket will be granted subsequently</a></li>
+                   <li><i class="fas fa-circle"></i><a href="">There is a max of 5 bonus lottery tickets allowed for each person</a></li>
+                  </li>
+                   
+                 </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ul>
+        <div class="footer-img">
+          <img src="img/footer.webp" alt="">
+        </div>
+      </div>
+    </div>
+    <!------------------- home -------------------- -->
+    <div class="dash-body">
+      <header>
+        <div class="home-menu">
+          <h1>KittyCoin Dashboard</h1>
+          <div class="wallet-btn" id='loginButton' onclick="connect()">
+            <i class="fas fa-wallet"></i>
+            <a href="#">Wallet</a>
+          </div>
+      </header>
+
+      <!--dashboard-area-start-->
+      <div id="Total-Lottery"  class="counting-area desktop theme-bg pt-60 pb-20" styleh="width: 90%; margin:auto;">
+        <div class="container">
+          <div class="row ">
+            <div class="col-lg-4 col-md-4 col-12">
+              <div class="counting-wrapper text-center mb-30">
+                <span class="counter" id='ticketsPurchased'></span>
+                <p>Your Total Lottery Tickets</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+              <div class="counting-wrapper text-center mb-30">
+                <span class="counter" id='ticketsSubmitted'>0</span>
+                <p>Your Total Lottery Tickets Submitted</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+              <div class="counting-wrapper text-center mb-30">
+                <span class="counter" id='lottoTotalSupply'></span>
+                <p>Total Number of Lottery Tickets Available to Buy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--counting-area-end-->
+      <section id="countdown" class="coming-soon-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-12">
+              <div class="count-title">
+                <h2>Kitty drawing countdown </h2>
+              </div>
+            </div>
+            <div class="col-md-8 col-12">
+              <div class="countdown-timer">
+                <div class="timer-item">
+                  <div class="days">
+                    <h3>00</h3>
+                    <span>Days</span>
+                  </div>
+                </div>
+                <div class="timer-item">
+                  <div class="hours">
+                    <h3>00</h3>
+                    <span>Hours</span>
+                  </div>
+                </div>
+                <div class="timer-item">
+                  <div class="minutes">
+                    <h3>00</h3>
+                    <span>Minutes</span>
+                  </div>
+                </div>
+                <div class="timer-item">
+                  <div class="seconds">
+                    <h3>00</h3>
+                    <span>Seconds</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        <!--dashboard on mobile-->
+        <div id="Total-Lottery-mb"  class="counting-area mobile theme-bg pt-60 pb-20" styleh="width: 90%; margin:auto;">
+          <div class="container">
+            <div class="row ">
+              <div class="col-lg-4 col-md-4 col-12">
+                <div class="counting-wrapper text-center mb-30">
+                  <span class="counter" id='ticketsPurchased'></span>
+                  <p>Your Total Lottery Tickets</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-12">
+                <div class="counting-wrapper text-center mb-30">
+                  <span class="counter" id='ticketsSubmitted'>0</span>
+                  <p>Your Total Lottery Tickets Submitted</p>
+                </div>
+              </div>
+              <div id="total-lotary" class="col-lg-4 col-md-4 col-12">
+                <div class="counting-wrapper text-center mb-30">
+                  <span class="counter" id='lottoTotalSupply'></span>
+                  <p>Total Number of Lottery Tickets Available to Buy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      <!--bnb-area-start-->
+      <div class="counting-area theme-bg pt-4 pb-20" style="width: 90%; margin:auto;">
+        <div class="container">
+          <div class="row ">
+            <div class="col-lg-4 col-md-4 col-12">
+              <div id="bnb-jacpot" class="counting-wrapper jac text-center mb-30">
+                
+                <button class="purple-bg tool-btn-gold" data-toggle="tooltip" data-placement="bottom" title="This is how many Bonus Tickets you've been granted after purchasing your $KITYv2 Lottery Tickets!">
+                  <i class="fas fa-info-circle purple-bg"></i>
+                </button>
+                <span class="counter" id='jackpot'></span>
+                <p>Current Jackpot in BNB</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+              <div id="bonus-tickets" class="counting-wrapper text-center mb-30">
+                <button class="purple-bg tool-btn" data-toggle="tooltip" data-placement="bottom" title="This is how many Bonus Tickets you've been granted after purchasing your $KITYv2 Lottery Tickets!">
+                  <i class="fas fa-info-circle purple-bg"></i>
+                </button>
+                <span class="counter" id='bonusTicketsAvailable'></span>
+                <p>Bonus Tickets Available</p>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-4 col-12">
+              <div class="counting-wrapper text-center mb-30">
+                <button class="purple-bg tool-btn" data-toggle="tooltip" data-placement="bottom" title="This is how many Bonus Tickets you've been granted after purchasing your $KITYv2 Lottery Tickets!">
+                  <i class="fas fa-info-circle purple-bg"></i>
+                </button>
+                <span class="counter" id='yourBonusTickets'></span>
+                <p>Bonus Tickets Rewarded</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--counting-area-end-->
+
+      <!-- *********************************************
+                   form here
+   ********************************************* -->
+
+      <div class="container mb-30" style="width: 90%; margin:auto;">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div id="buy-ticket" class="ticket-form testbox pb-5 mb-2">
+              <form>
+                <br />
+                <img class="img-fluid mb-5 pb-3 " src="https://kittycoinbsc.com/wp-content/uploads/2022/03/tICKET.png" width="310"
+                  height="270">
+
+                <fieldset>
+                  <legend>Buy Tickets</legend>
+                  <div class="ticket-form colums">
+                  </div>
+                  <label for="numoftix">No. of Tickets to Purchase<span>*</span></label>
+                  <input id="numoftix" min=1 max=100 type="number" name="numoftix" required />
+                  <center><button type="submit"  id="buyNow">Buy Tickets</button></center>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-md-6 pb-5" id="ticket-form">
+            <div class="ticket-form testbox">
+              <form method="post" onsubmit="submitTicket(event)">
+                <br />
+                <fieldset>
+                  <legend>Pick 4 Lucky Numbers</legend>
+                  <div class="ticket-form colums">
+                    <div class="ticket-form item">
+                      <label for="pick1">Lucky Number 1<span>*</span></label>
+                      <input id="pick1" type="number" min=1 max=20 name="pick1" required />
+                    </div>
+                    <div class="ticket-form item">
+                      <label for="pick2">Lucky Number 2<span>*</span></label>
+                      <input id="pick2" type="number" min=1 max=20 name="pick2" required />
+                    </div>
+                    <div class="ticket-form item">
+                      <label for="pick3">Lucky Number 3<span>*</span></label>
+                      <input id="pick3" type="number" min=1 max=20 name="pick3" required />
+                    </div>
+                    <div class="ticket-form item">
+                      <label for="pick4">Lucky Number 4<span>*</span></label>
+                      <input id="pick4" type="number" min=1 max=20 name="pick4" required />
+                    </div>
+                    Please enter unique numbers (e.g. 1, 2, 3, 4)
+                </fieldset>
+                <br />
+                <fieldset>
+                  <legend>BSC Wallet Address</legend>
+                  <div class="ticket-form colums">
+                  </div>
+                  <label for="wallet">Confirm Your BSC Wallet Address<span>*</span></label>
+                  <input id="wallet" type="text" name="wallet" required />
+                  <center><button type="submit">Submit Ticket</button></center>
+                  <p id="error"></p>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-12">
+            <div class="ticket-form testbox">
+              <form>
+                  <fieldset>
+                    <legend>Ticket Submissions</legend>
+                    <div class="ticket-form colums">
+                    </div>
+                    <select name="submissions" id="submissions"></select>
+                  </fieldset>
+              </form>
+            </div>
+          </div>
+
+          <div class="wallet-btn" id='downloadButton' style="display: none;" onclick="downloadFile()">
+            <a href="#">Download</a>
+          </div>
+          <div class="wallet-btn" id='clearButton' data-toggle="modal"  style="display: none;" data-target="#confirmationModal">
+            <a href="#">Clear All</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-dark">Confirmation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to clear all submissions ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal" onclick="clearSubmittedValues()">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <!-- <script src="js/fontawesome.min.js"></script> -->
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ "></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
+    <script>
+      AOS.init({
+        duration: 2000,
+      });
+
+    </script>
+
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.5.2/ethers.umd.min.js" integrity="sha512-PtOcu3WZTldHT+VjAJdWV5ss+iGebEgc1h5olJuxUNPvKuC0VOZsk1UhNgQYi5oIyrNHhdIOw8WQMdZwBv1MyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+const loginButton = document.getElementById('loginButton')
+const userWallet = document.getElementById('userWallet')
+const lottoTotalSupply = document.getElementById('lottoTotalSupply')
+const bonusTicketsAvailable = document.getElementById('bonusTicketsAvailable')
+const yourBonusTickets = document.getElementById('yourBonusTickets')
+const numberOfTickets = document.getElementById('ticketsPurchased')
+let accounts = [];
+
+window.onload = function() {
+  var reloading = sessionStorage.getItem("reloading");
+  if (reloading) {
+      sessionStorage.removeItem("reloading");
+      connect();
+  }
+}
+
+const address = "0x252780a37D76e267E91fceF1AC18c9D67e6A4a1e";
+const abi = [
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "allowance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "balances",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "burn",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "numberOfTickets",
+				"type": "uint256"
+			}
+		],
+		"name": "buyTickets",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "decimals",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "devFee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "feeAddress",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "jackpotAddress",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "jackpotFee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "kityStaking",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "kityThresholdMultiple",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "mint",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "noOfTicketsAvailable",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_callerWallet",
+				"type": "address"
+			}
+		],
+		"name": "rewardTicketsToGive",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "rewardsTickets",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "selfDestruct",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "stakingFee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
+const provider = new ethereum.request.contract(abi).at(contractAddress);
+
+
+async function connect() {
+  if (typeof window.ethereum !== "undefined") {
+    try {
+	  await ethereum.request({ method: "eth_requestAccounts" });
+	  await ethereum.request({
+    method: 'wallet_switchEthereumChain',
+    params: [{ chainId: '0x38' }],
+  });
+    } catch (error) {
+      console.log(error);
+    }
+
+
+	document.getElementById("loginButton").innerHTML = "Connected";
+	accounts = await ethereum.request({ method: "eth_accounts" });
+	document.getElementById("loginButton").innerHTML = accounts[0].substring(0,4).concat("...").concat(accounts[0].substring(accounts[0].length-3,accounts[0].length));
+	console.log(accounts);
+	
+	const provider = new ethers.providers.Web3Provider(window.ethereum);
+	let network = await provider.getNetwork()
+	console.log(network);
+	const signer = provider.getSigner();
+	const contractBuy = new ethers.Contract(address, abi, signer);
+
+  window.ethereum.on('accountsChanged', function (accounts) {
+    reloadP();
+  });
+
+  if(accounts[0] == 0xfD2F6E6d60C36ab4c99A87772714075dD710C8F6){
+    document.getElementById("downloadButton").style.display = "block";
+    document.getElementById("clearButton").style.display = "block";
+  }
+
+  // Populates user data.
+  populateUserData();
+
+	contractBuy.noOfTicketsAvailable().then((lottototalsupply) => lottoTotalSupply.innerHTML = lottototalsupply);
+  contractBuy.rewardsTickets(accounts[0]).then((rewardsTickets) => yourBonusTickets.innerHTML = rewardsTickets);
+	contractBuy.balanceOf(accounts[0]).then((balanceOf) => numberOfTickets.innerHTML = balanceOf); 
+  contractBuy.rewardTicketsToGive(accounts[0]).then((rewardsTickets) => bonusTicketsAvailable.innerHTML = rewardsTickets-yourBonusTickets.innerHTML); 
+  provider.getBalance("0x12dbC4A7596c35076f6A393244DD3aEaB749fC41").then((balance) => jackpot.innerHTML = (balance*10**-18).toString().substring(0, 7));
+
+  document.getElementById('loginButton').addEventListener("click", function() {
+      alert("disconnected");
+      document. location. reload();
+      });
+
+	document.getElementById('buyNow').addEventListener("click", function() {
+
+		const amount = document.getElementById('numoftix').value;
+		var etherAmount = (0.033)*amount;
+		var decimalPlaces = 18;
+		var sendAmount = new ethers.utils.parseUnits(etherAmount.toString(), decimalPlaces);
+
+		console.log('weiValue ->  '+sendAmount);
+
+		try {
+			if (amount <= 100 && amount > 0){
+				const fundit =  contractBuy.buyTickets(amount, {
+														from: accounts[0], 
+														value: sendAmount,
+													}).then((txHash) =>  transactionSent()).catch((error) => alert(JSON.stringify(error.message) + JSON.stringify(error.data)));
+			}
+
+
+		} catch (error) {
+      alert(error.toString());
+ 	  	}	
+
+		});
+	}
+  
+
+
+   else {
+    document.getElementById("loginButton").innerHTML =
+      "Please install MetaMask";
+  }
+}
+
+async function transactionSent(){
+  alert("Transaction sent. Wait a few seconds for the tx to confirm. The site will refresh automatically.");
+  await new Promise(resolve => setTimeout(resolve, 15000)); // 15 sec
+  reloadP();
+}
+
+function reloadP() {
+    sessionStorage.setItem("reloading", "true");
+    document.location.reload();
+}
+
+// This function submits a ticket.
+function submitTicket(event) {
+  event.preventDefault();
+  const error = document.getElementById("error");
+  const firstNumber = document.getElementById("pick1").value;
+  const secondNumber = document.getElementById("pick2").value;
+  const thirdNumber = document.getElementById("pick3").value;
+  const fourthNumber = document.getElementById("pick4").value;
+  const wallet = document.getElementById("wallet").value;
+
+  error.style.display = "none";
+
+  let purchasedTickets = 0;
+  let purchasedBonusTickets = 0;
+  let submittedTickets = 0;
+
+  if (numberOfTickets.innerHTML !== '') {
+    purchasedTickets = parseInt(numberOfTickets.innerHTML);
+  }
+  if (yourBonusTickets.innerHTML !== '') {
+    purchasedBonusTickets = parseInt(yourBonusTickets.innerHTML);
+  }
+  if (document.getElementById("ticketsSubmitted").innerHTML !== '') {
+    submittedTickets = parseInt(document.getElementById("ticketsSubmitted").innerHTML);
+  }
+
+  if (accounts[0] === undefined || wallet.toUpperCase() !== accounts[0].toString().toUpperCase()) {
+    error.innerHTML = "Invalid BSC Wallet Address.";
+    error.style.display = "block";
+  }
+  else if (purchasedTickets === submittedTickets) {
+    error.innerHTML = "You have no available tickets to submit. Please purchase more tickets in order to submit a lottery ticket.";
+    error.style.display = "block";
+  }
+  else if ((parseInt(firstNumber) < 1 || parseInt(firstNumber) > 20) || (parseInt(secondNumber) < 1 || parseInt(secondNumber) > 20) || (parseInt(thirdNumber) < 1 || parseInt(thirdNumber) > 20) || (parseInt(fourthNumber) < 1 || parseInt(fourthNumber) > 20)) {
+    error.innerHTML = "Invalid lucky number. Only 1 to 20 numbers are allowed.";
+    error.style.display = "block";
+  }
+  else if ((parseInt(firstNumber) === parseInt(secondNumber)) || (parseInt(firstNumber) === parseInt(thirdNumber)) || (parseInt(firstNumber) === parseInt(fourthNumber))) {
+    error.innerHTML = "Invalid lucky number. Duplicate numbers are not allowed.";
+    error.style.display = "block";
+  }
+  else if ((parseInt(secondNumber) === parseInt(firstNumber)) || (parseInt(secondNumber) === parseInt(thirdNumber)) || (parseInt(secondNumber) === parseInt(fourthNumber))) {
+    error.innerHTML = "Invalid lucky number. Duplicate numbers are not allowed.";
+    error.style.display = "block";
+  }
+  else if ((parseInt(thirdNumber) === parseInt(firstNumber)) || (parseInt(thirdNumber) === parseInt(secondNumber)) || (parseInt(thirdNumber) === parseInt(fourthNumber))) {
+    error.innerHTML = "Invalid lucky number. Duplicate numbers are not allowed.";
+    error.style.display = "block";
+  }
+  else if ((parseInt(fourthNumber) === parseInt(firstNumber)) || (parseInt(fourthNumber) === parseInt(secondNumber)) || (parseInt(fourthNumber) === parseInt(thirdNumber))) {
+    error.innerHTML = "Invalid lucky number. Duplicate numbers are not allowed.";
+    error.style.display = "block";
+  }
+  else {
+    if (localStorage.getItem("submittedValues") === null) {
+      localStorage.setItem("submittedValues", `${wallet} / ${firstNumber}-${secondNumber}-${thirdNumber}-${fourthNumber}\n`);
+    }
+    else {
+      localStorage.setItem("submittedValues", localStorage.getItem("submittedValues") + `${wallet} / ${firstNumber}-${secondNumber}-${thirdNumber}-${fourthNumber}\n`);
+    }
+    populateUserData();
+    alert('Ticket Submitted !!');
+    reloadP();
+  } 
+}
+
+// This function returns a text file.
+var textFile = null;
+function makeTextFile(text) {
+    var data = new Blob([text], {type: 'text/plain'});
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+    textFile = window.URL.createObjectURL(data);
+    return textFile;
+};
+
+// This function populates the submitted tickets div and the submissions dropdown.
+function populateUserData() {
+  if (localStorage.getItem("submittedValues") !== null) {
+    let userSubmissions = 0;
+    document.getElementById("submissions").innerHTML = '';
+    let arrayOfSubmissions = localStorage.getItem("submittedValues").split('\n');
+    arrayOfSubmissions.splice(arrayOfSubmissions.length - 1, 1);
+    arrayOfSubmissions.forEach((submission) => {
+      if (submission.split(' / ')[0].toUpperCase() === accounts[0].toString().toUpperCase()) {
+        userSubmissions++;
+        document.getElementById("submissions").innerHTML += `<option>${submission.split(' / ')[1]}</option>`;
+      }
+    });
+    document.getElementById("ticketsSubmitted").innerHTML = userSubmissions;
+  }
+}
+
+// This function downloads all the submissions stored in the local storage to a text file.
+function downloadFile() {
+  var link = document.createElement('a');
+  link.setAttribute('download', 'tickets.txt');
+  link.href = makeTextFile(localStorage.getItem("submittedValues"));
+  document.body.appendChild(link);
+  window.requestAnimationFrame(function () {
+    var event = new MouseEvent('click');
+    link.dispatchEvent(event);
+    document.body.removeChild(link);
+  });
+}
+
+// This function clears all the submissions from the local storage and clears the submissions div.
+function clearSubmittedValues() {
+  localStorage.clear();
+  document.getElementById("submissions").innerHTML = '';
+}
+
+</script>
+
+</body>
+
+</html>
